@@ -1,0 +1,31 @@
+{
+	"tasks": {
+		"build": "deno bundle --outdir=dist src/app.ts",
+		"build:watch": "deno bundle --watch --outdir=dist src/app.ts",
+		"start": "deno run --allow-net --allow-read --allow-env server.ts",
+		"dev": "deno task build && deno task build:watch & deno run --allow-net --allow-read --allow-env --watch server.ts"
+	},
+	"imports": {
+		"~/": "./src/",
+		"@noble/curves": "jsr:@noble/curves@^2.0.1",
+		"@noble/hashes": "jsr:@noble/hashes@^2.0.1",
+		"@purifyjs/core": "jsr:@purifyjs/core@^0.4.0",
+		"@scure/base": "jsr:@scure/base@^2.0.0",
+		"@std/http": "jsr:@std/http@^1.0.24"
+	},
+	"unstable": ["raw-imports"],
+	"compilerOptions": {
+		"lib": ["esnext"],
+		"types": ["npm:@total-typescript/ts-reset@^0.6.1"]
+	},
+	"fmt": {
+		"lineWidth": 120,
+		"indentWidth": 4,
+		"useTabs": true
+	},
+	"lint": {
+		"rules": {
+			"exclude": ["no-explicit-any"]
+		}
+	}
+}
