@@ -4,10 +4,13 @@ import { NostrProfileAddress } from "./libs/nostr/NostrProfileAddress.ts";
 import { ZapView } from "./views/ZapView.ts";
 import { HelloView } from "./views/HelloView.ts";
 import { useReplaceChildren } from "./utils/bind.ts";
+import { globalStyle } from "./style.ts";
+
+document.adoptedStyleSheets.push(globalStyle.sheet());
 
 function App() {
 	const { body } = tags;
-	const self = body().$bind(appSheet.useScope());
+	const self = body().$bind(appStyle.useScope());
 
 	const urlHash = ref<string>("");
 	self.$bind(() => {
@@ -39,7 +42,7 @@ function App() {
 	return self;
 }
 
-const appSheet = css`
+const appStyle = css`
 `;
 
 document.body.replaceWith(toChild(App()));

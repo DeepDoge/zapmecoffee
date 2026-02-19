@@ -1,6 +1,6 @@
 import { css } from "./utils/css.ts";
 
-export const globalSheet = css`
+export const globalStyle = css`
 	*, ::before, ::after {
 		box-sizing: border-box;
 	}
