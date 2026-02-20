@@ -1,10 +1,10 @@
-import { Impl } from "../../traits.ts";
-import { NostrEOSEResponse } from "./NostrEOSEResponse.ts";
-import { NostrEventResponse } from "./NostrEventResponse.ts";
-import { NostrProfileAddress } from "./NostrProfileAddress.ts";
-import { NostrProfileRelay } from "./NostrProfileRelay.ts";
-import { NostrRelay } from "./NostrRelay.ts";
-import { NostrRelayConnection } from "./NostrRelayConnection.ts";
+import { Impl } from "~/traits.ts";
+import { NostrEOSEResponse } from "~/libs/nostr/NostrEOSEResponse.ts";
+import { NostrEventResponse } from "~/libs/nostr/NostrEventResponse.ts";
+import { NostrProfileAddress } from "~/libs/nostr/NostrProfileAddress.ts";
+import { NostrProfileRelay } from "~/libs/nostr/NostrProfileRelay.ts";
+import { NostrRelay } from "~/libs/nostr/NostrRelay.ts";
+import { NostrRelayConnection } from "~/libs/nostr/NostrRelayConnection.ts";
 
 export type NostrProfileRelayList = {
 	relays: NostrProfileRelay[];

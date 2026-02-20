@@ -1,6 +1,6 @@
 import { ref, tags } from "@purifyjs/core";
-import { css } from "../utils/css.ts";
-import { boxMixin } from "../style.ts";
+import { css } from "~/utils/css.ts";
+import { boxMixin } from "~/style.ts";
 
 export function HelloView() {
 	const { div, h1, p, input, section, article, main, strong, span } = tags;

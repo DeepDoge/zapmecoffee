@@ -1,4 +1,4 @@
-import { NostrRelay } from "./NostrRelay.ts";
+import { NostrRelay } from "~/libs/nostr/NostrRelay.ts";
 
 export type NostrProfileRelay = {
 	relay: NostrRelay;

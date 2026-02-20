@@ -1,4 +1,4 @@
-import { Impl } from "../../traits.ts";
+import { Impl } from "~/traits.ts";
 import { NostrRelay } from "./NostrRelay.ts";
 
 export type NostrRelayConnection = {

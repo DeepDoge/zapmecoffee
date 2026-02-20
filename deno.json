@@ -3,7 +3,8 @@
 		"build": "deno bundle --outdir=dist src/app.ts",
 		"build:watch": "deno bundle --watch --outdir=dist src/app.ts",
 		"start": "deno run --allow-net --allow-read --allow-env serve.ts",
-		"dev": "deno task build && deno task build:watch & deno run --allow-net --allow-read --allow-env --watch serve.ts"
+		"dev": "deno task build && deno task build:watch & deno run --allow-net --allow-read --allow-env --watch serve.ts",
+		"check": "deno check . && deno lint ."
 	},
 	"imports": {
 		"@libs/qrcode": "jsr:@libs/qrcode@^3.0.1",

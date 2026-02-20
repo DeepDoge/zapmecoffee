@@ -1,12 +1,12 @@
 import { qrcode } from "@libs/qrcode";
 import { computed, ref, tags } from "@purifyjs/core";
-import { createDonationInvoice } from "../libs/lightning/donate.ts";
-import { NostrProfile } from "../libs/nostr/NostrProfile.ts";
-import { NostrProfileAddress } from "../libs/nostr/NostrProfileAddress.ts";
-import { NostrProfileRelayList } from "../libs/nostr/NostrProfileRelayList.ts";
-import { NostrRelay } from "../libs/nostr/NostrRelay.ts";
-import { boxMixin } from "../style.ts";
-import { css, style } from "../utils/css.ts";
+import { createDonationInvoice } from "~/libs/lightning/donate.ts";
+import { NostrProfile } from "~/libs/nostr/NostrProfile.ts";
+import { NostrProfileAddress } from "~/libs/nostr/NostrProfileAddress.ts";
+import { NostrProfileRelayList } from "~/libs/nostr/NostrProfileRelayList.ts";
+import { NostrRelay } from "~/libs/nostr/NostrRelay.ts";
+import { boxMixin } from "~/style.ts";
+import { css, style } from "~/utils/css.ts";
 
 const DEFAULT_REPLAYS = [
 	NostrRelay.create("wss://relay.damus.io"),

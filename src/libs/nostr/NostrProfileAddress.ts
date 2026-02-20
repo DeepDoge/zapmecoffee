@@ -1,6 +1,6 @@
-import { Impl } from "../../traits.ts";
-import { hasPrefix } from "../helpers/hasPrefix.ts";
-import { NostrProfileAddressToHexImpl } from "./NostrProfileAddressToHexImpl.ts";
+import { Impl } from "~/traits.ts";
+import { hasPrefix } from "~/libs/helpers/hasPrefix.ts";
+import { NostrProfileAddressToHexImpl } from "~/libs/nostr/NostrProfileAddressToHexImpl.ts";
 
 export type NostrProfileAddress = {
 	npub: `npub1${string}`;

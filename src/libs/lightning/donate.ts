@@ -1,6 +1,6 @@
 import { bech32 } from "@scure/base";
-import { hasPrefix } from "../helpers/hasPrefix.ts";
-import { NostrProfile } from "../nostr/NostrProfile.ts";
+import { hasPrefix } from "~/libs/helpers/hasPrefix.ts";
+import { NostrProfile } from "~/libs/nostr/NostrProfile.ts";
 
 export async function createDonationInvoice(params: {
 	profile: NostrProfile;

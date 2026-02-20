@@ -1,12 +1,12 @@
 import { ref, tags, toChild } from "@purifyjs/core";
-import { NostrProfileAddress } from "./libs/nostr/NostrProfileAddress.ts";
-import { globalStyle } from "./style.ts";
-import { awaited } from "./utils/awaited.ts";
-import { useReplaceChildren } from "./utils/bind.ts";
-import { css } from "./utils/css.ts";
-import { unroll } from "./utils/unroll.ts";
-import { HelloView } from "./views/HelloView.ts";
-import { ZapView } from "./views/ZapView.ts";
+import { NostrProfileAddress } from "~/libs/nostr/NostrProfileAddress.ts";
+import { globalStyle } from "~/style.ts";
+import { awaited } from "~/utils/awaited.ts";
+import { useReplaceChildren } from "~/utils/bind.ts";
+import { css } from "~/utils/css.ts";
+import { unroll } from "~/utils/unroll.ts";
+import { HelloView } from "~/views/HelloView.ts";
+import { ZapView } from "~/views/ZapView.ts";
 
 document.adoptedStyleSheets.push(globalStyle.sheet());
 
