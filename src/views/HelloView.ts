@@ -9,7 +9,17 @@ export function HelloView() {
 
 	const self = main()
 		.$bind(containerStyle.useScope())
-		.$bind(() => npub.follow((v) => location.hash = v, true));
+		.$bind(() =>
+			npub.follow((v) => {
+				const oldState = location.hash.length > 1;
+				const newState = v.length > 0;
+				if (oldState !== newState) {
+					location.assign(`#${v}`);
+				} else {
+					location.replace(`#${v}`);
+				}
+			}, true)
+		);
 
 	const heroSection = section()
 		.$bind(heroStyle.useScope())
