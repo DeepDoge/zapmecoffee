@@ -1,7 +1,4 @@
 export type NostrProfileEventResponse = {
-	pubkey: string;
-	created_at: number;
-
 	name?: string;
 	display_name?: string;
 	about?: string;
@@ -16,8 +13,6 @@ export type NostrProfileEventResponse = {
 export const NostrProfileEventResponse = {
 	isProfileEventResponse(data: unknown): data is NostrProfileEventResponse {
 		if (typeof data !== "object" || data === null) return false;
-		if (!("pubkey" in data) || typeof data.pubkey !== "string") return false;
-		if (!("created_at" in data) || typeof data.created_at !== "number") return false;
 
 		if ("name" in data && typeof data.name !== "string") return false;
 		if ("display_name" in data && typeof data.display_name !== "string") return false;

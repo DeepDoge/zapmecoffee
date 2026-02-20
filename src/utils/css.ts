@@ -6,12 +6,31 @@ declare global {
 	}
 }
 
-export function css(...params: Parameters<typeof String.raw>) {
-	return new CssTemplate(String.raw(...params));
+export function style(...params: Parameters<typeof String.raw>): Lifecycle.OnConnected {
+	const raw = String.raw(...params);
+	const scopeId = Math.random().toString(36).slice(2);
+	const scopeRaw = `[data-scope="${scopeId}"] {${raw}}`;
+	const scopeSheet = new CSSStyleSheet();
+	scopeSheet.replaceSync(scopeRaw);
+
+	return (element) => {
+		document.adoptedStyleSheets.push(scopeSheet);
+		element.dataset.scope = scopeId;
+
+		return () => {
+			const index = document.adoptedStyleSheets.indexOf(scopeSheet);
+			if (index === -1) return;
+			document.adoptedStyleSheets.splice(index, 1);
+		};
+	};
 }
 
-export function style(...params: Parameters<typeof String.raw>) {
+export function mixin(...params: Parameters<typeof String.raw>): string {
 	return String.raw(...params);
+}
+
+export function css(...params: Parameters<typeof String.raw>) {
+	return new CssTemplate(String.raw(...params));
 }
 
 export class CssTemplate {

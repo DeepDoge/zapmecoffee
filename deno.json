@@ -2,8 +2,8 @@
 	"tasks": {
 		"build": "deno bundle --outdir=dist src/app.ts",
 		"build:watch": "deno bundle --watch --outdir=dist src/app.ts",
-		"start": "deno run --allow-net --allow-read --allow-env server.ts",
-		"dev": "deno task build && deno task build:watch & deno run --allow-net --allow-read --allow-env --watch server.ts"
+		"start": "deno run --allow-net --allow-read --allow-env serve.ts",
+		"dev": "deno task build && deno task build:watch & deno run --allow-net --allow-read --allow-env --watch serve.ts"
 	},
 	"imports": {
 		"~/": "./src/",
