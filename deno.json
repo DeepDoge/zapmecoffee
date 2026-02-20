@@ -7,8 +7,6 @@
 	},
 	"imports": {
 		"~/": "./src/",
-		"@noble/curves": "jsr:@noble/curves@^2.0.1",
-		"@noble/hashes": "jsr:@noble/hashes@^2.0.1",
 		"@purifyjs/core": "jsr:@purifyjs/core@^0.4.0",
 		"@scure/base": "jsr:@scure/base@^2.0.0",
 		"@std/http": "jsr:@std/http@^1.0.24"
