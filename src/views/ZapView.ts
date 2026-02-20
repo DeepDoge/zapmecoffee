@@ -49,7 +49,7 @@ export async function ZapView(profileAddress: NostrProfileAddress) {
 		});
 	});
 
-	const { fieldset, h1, img, form, label, main, input, button, section, div, picture, strong } = tags;
+	const { fieldset, h1, img, form, label, main, input, button, section, div, picture, strong, a } = tags;
 
 	const self = main().$bind(style`
 		${boxMixin};
@@ -251,6 +251,14 @@ export async function ZapView(profileAddress: NostrProfileAddress) {
 						.textContent("Copy Invoice"),
 				);
 		}),
+		section()
+			.$bind(footerStyle.useScope())
+			.append$(
+				a()
+					.$bind(createOwnLinkStyle.useScope())
+					.href("/#")
+					.textContent("Get Your Own Page"),
+			),
 	);
 
 	return self;
@@ -362,7 +370,6 @@ const shareButtonStyle = css`
 		color: #fff;
 		cursor: pointer;
 		transition: background-color 0.2s linear;
-		margin-top: 0.5em;
 
 		&:hover:not(:disabled) {
 			background: rgba(255, 255, 255, 0.2);
@@ -372,5 +379,34 @@ const shareButtonStyle = css`
 			opacity: 0.7;
 			cursor: not-allowed;
 		}
+	}
+`;
+
+const createOwnLinkStyle = css`
+	:scope {
+		font-size: 0.875em;
+		padding: 0.75em 1.5em;
+		border-radius: 1em;
+		border: 2px solid #f4a261;
+		background: transparent;
+		color: #f4a261;
+		text-decoration: none;
+		display: inline-block;
+		transition: all 0.2s linear;
+		text-align: center;
+
+		&:hover {
+			background-color: #f4a261;
+			color: #fff;
+		}
+	}
+`;
+
+const footerStyle = css`
+	:scope {
+		display: block;
+		text-align: center;
+		padding-top: 1em;
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
 	}
 `;
