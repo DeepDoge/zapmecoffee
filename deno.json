@@ -6,10 +6,11 @@
 		"dev": "deno task build && deno task build:watch & deno run --allow-net --allow-read --allow-env --watch serve.ts"
 	},
 	"imports": {
-		"~/": "./src/",
+		"@libs/qrcode": "jsr:@libs/qrcode@^3.0.1",
 		"@purifyjs/core": "jsr:@purifyjs/core@^0.4.0",
 		"@scure/base": "jsr:@scure/base@^2.0.0",
-		"@std/http": "jsr:@std/http@^1.0.24"
+		"@std/http": "jsr:@std/http@^1.0.24",
+		"~/": "./src/"
 	},
 	"unstable": ["raw-imports"],
 	"compilerOptions": {

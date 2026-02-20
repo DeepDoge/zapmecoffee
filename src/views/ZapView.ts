@@ -1,11 +1,12 @@
+import { qrcode } from "@libs/qrcode";
 import { computed, ref, tags } from "@purifyjs/core";
 import { createDonationInvoice } from "../libs/lightning/donate.ts";
 import { NostrProfile } from "../libs/nostr/NostrProfile.ts";
 import { NostrProfileAddress } from "../libs/nostr/NostrProfileAddress.ts";
 import { NostrProfileRelayList } from "../libs/nostr/NostrProfileRelayList.ts";
 import { NostrRelay } from "../libs/nostr/NostrRelay.ts";
-import { css, style } from "../utils/css.ts";
 import { boxMixin } from "../style.ts";
+import { css, style } from "../utils/css.ts";
 
 const DEFAULT_REPLAYS = [
 	NostrRelay.create("wss://relay.damus.io"),
@@ -109,7 +110,7 @@ export async function ZapView(profileAddress: NostrProfileAddress) {
 					setTimeout(() => {
 						target.textContent = "Copy Share Link";
 						target.disabled = false;
-					}, 2000);
+					}, 1000);
 				})
 				.textContent("Copy Share Link"),
 		);
@@ -230,13 +231,10 @@ export async function ZapView(profileAddress: NostrProfileAddress) {
 				.ariaLabel("Invoice QR Code and copy button")
 				.$bind(invoiceStyle.useScope())
 				.append$(
-					img()
-						.src(
-							`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${
-								encodeURIComponent(inv.invoice)
-							}`,
-						)
-						.alt("Invoice QR Code"),
+					img().alt("Invoice QR Code").src([
+						"data:image/svg+xml;charset=utf-8",
+						encodeURIComponent(qrcode(inv.invoice, { output: "svg", border: 2 })),
+					].join(",")),
 					button()
 						.type("button")
 						.role("button")
@@ -248,7 +246,7 @@ export async function ZapView(profileAddress: NostrProfileAddress) {
 							setTimeout(() => {
 								target.textContent = "Copy Invoice";
 								target.disabled = false;
-							}, 2000);
+							}, 1000);
 						})
 						.textContent("Copy Invoice"),
 				);
@@ -336,14 +334,16 @@ const zapButtonStyle = css`
 const invoiceStyle = css`
 	:scope {
 		display: block grid;
+		grid-template-columns: minmax(0, 15em);
 		justify-items: center;
+		justify-content: center;
 		gap: 1em;
 		padding: 1em;
 		background: rgba(255, 255, 255, 0.05);
 		border-radius: 1em;
 
 		img {
-			inline-size: 12em;
+			inline-size: 100%;
 			aspect-ratio: 1;
 			border-radius: 0.75em;
 			background: #fff;
