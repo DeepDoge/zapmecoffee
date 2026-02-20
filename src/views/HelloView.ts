@@ -119,8 +119,7 @@ const heroStyle = css`
 			font-size: 2em;
 			font-weight: 800;
 			color: #fff;
-			margin: 0;
-			background: linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
+			background-image: linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
 			background-clip: text;
@@ -130,7 +129,6 @@ const heroStyle = css`
 			color: #a8a8b3;
 			font-size: 1.1em;
 			max-inline-size: 30ch;
-			margin: 0;
 			line-height: 1.5;
 		}
 	}
@@ -143,7 +141,7 @@ const logoStyle = css`
 		place-items: center;
 		inline-size: 2em;
 		aspect-ratio: 1;
-		background: linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
+		background-image: linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
 		border-radius: 50%;
 		box-shadow: 0 0.5em 2em rgba(244, 162, 97, 0.3);
 	}
@@ -153,7 +151,7 @@ const ctaStyle = css`
 	:scope {
 		display: block grid;
 		gap: 0.75em;
-		background: rgba(255, 255, 255, 0.03);
+		background-color: rgba(255, 255, 255, 0.03);
 		padding: 1.5em;
 		border-radius: 1em;
 		border: 1px solid rgba(255, 255, 255, 0.1);
@@ -169,7 +167,6 @@ const labelStyle = css`
 	:scope {
 		color: #a8a8b3;
 		font-size: 0.9em;
-		margin: 0;
 	}
 `;
 
@@ -188,7 +185,7 @@ const featuresStyle = css`
 			justify-items: center;
 			gap: 0.5em;
 			padding: 1em;
-			background: rgba(255, 255, 255, 0.03);
+			background-color: rgba(255, 255, 255, 0.03);
 			border-radius: 0.75em;
 
 			strong {
@@ -199,7 +196,6 @@ const featuresStyle = css`
 			p {
 				color: #a8a8b3;
 				font-size: 0.85em;
-				margin: 0;
 				line-height: 1.4;
 			}
 		}
@@ -213,7 +209,7 @@ const featureIconStyle = css`
 		place-items: center;
 		inline-size: 2em;
 		aspect-ratio: 1;
-		background: rgba(244, 162, 97, 0.1);
+		background-color: rgba(244, 162, 97, 0.1);
 		border-radius: 50%;
 	}
 `;
@@ -250,9 +246,9 @@ const stepsStyle = css`
 			span {
 				display: block grid;
 				place-items: center;
-				inline-size: 2em;
-				aspect-ratio: 1;
-				background: linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
+			inline-size: 2em;
+			aspect-ratio: 1;
+			background-image: linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
 				border-radius: 50%;
 				color: #fff;
 				font-weight: 700;
@@ -262,7 +258,6 @@ const stepsStyle = css`
 			p {
 				color: #a8a8b3;
 				font-size: 0.85em;
-				margin: 0;
 				line-height: 1.4;
 			}
 		}

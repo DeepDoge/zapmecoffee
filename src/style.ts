@@ -1,7 +1,7 @@
 import { css, mixin } from "~/utils/css.ts";
 
 export const boxMixin = mixin`
-	background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+	background-image: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
 	border-radius: var(--radius);
 	box-shadow: 0 0.5em 2em rgba(0, 0, 0, 0.3);
 
@@ -80,7 +80,7 @@ export const globalStyle = css`
 		padding: 0.75em 1em;
 		border: solid 1px transparent;
 		border-radius: 0.75em;
-		background: var(--base);
+		background-color: var(--base);
 		color: #fff;
 		font-size: 1em;
 
@@ -100,7 +100,7 @@ export const globalStyle = css`
 		padding: 0.75em;
 		border: solid 1px transparent;
 		border-radius: 0.75em;
-		background: var(--base);
+		background-color: var(--base);
 		color: color-mix(in srgb, var(--base), var(--pop) 90%);
 		cursor: pointer;
 		font-size: 0.9em;
@@ -142,7 +142,7 @@ export const globalStyle = css`
 		&::before {
 			content: "";
 			aspect-ratio: 1;
-			background: conic-gradient(
+			background-image: conic-gradient(
 				from 0deg,
 				var(--primary) 0%,
 				transparent 60%,

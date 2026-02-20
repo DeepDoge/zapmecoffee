@@ -271,7 +271,7 @@ const avatarStyle = css`
 		aspect-ratio: 1;
 		border-radius: 50%;
 		overflow: clip;
-		background: linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
+		background-image: linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
 		display: block grid;
 		place-items: center;
 		box-shadow: 0 0.25em 1em rgba(244, 162, 97, 0.3);
@@ -300,7 +300,7 @@ const nip05Style = css`
 	:scope {
 		font-size: 0.75em;
 		color: #2ecc71;
-		background: rgba(46, 204, 113, 0.1);
+		background-color: rgba(46, 204, 113, 0.1);
 		padding: 0.25em 0.75em;
 		border-radius: 1em;
 		white-space: nowrap;
@@ -319,7 +319,7 @@ const zapButtonStyle = css`
 		padding: 1em;
 		border-radius: 1em;
 		border: none;
-		background: linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
+		background-image: linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
 		color: #fff;
 		cursor: pointer;
 		font-size: 1.1em;
@@ -347,14 +347,14 @@ const invoiceStyle = css`
 		justify-content: center;
 		gap: 1em;
 		padding: 1em;
-		background: rgba(255, 255, 255, 0.05);
+		background-color: rgba(255, 255, 255, 0.05);
 		border-radius: 1em;
 
 		img {
 			inline-size: 100%;
 			aspect-ratio: 1;
 			border-radius: 0.75em;
-			background: #fff;
+			background-color: #fff;
 			padding: 0.5em;
 		}
 	}
@@ -366,13 +366,13 @@ const shareButtonStyle = css`
 		padding: 0.5em 1em;
 		border-radius: 1em;
 		border: none;
-		background: rgba(255, 255, 255, 0.1);
+		background-color: rgba(255, 255, 255, 0.1);
 		color: #fff;
 		cursor: pointer;
 		transition: background-color 0.2s linear;
 
 		&:hover:not(:disabled) {
-			background: rgba(255, 255, 255, 0.2);
+			background-color: rgba(255, 255, 255, 0.2);
 		}
 
 		&:disabled {
@@ -388,7 +388,7 @@ const createOwnLinkStyle = css`
 		padding: 0.75em 1.5em;
 		border-radius: 1em;
 		border: 2px solid #f4a261;
-		background: transparent;
+		background-color: transparent;
 		color: #f4a261;
 		text-decoration: none;
 		display: inline-block;

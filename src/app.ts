@@ -55,7 +55,7 @@ const appStyle = css`
 		place-items: center;
 		place-content: center;
 		padding-block: 2em;
-		background: linear-gradient(180deg, #0f0f1a 0%, #1a1a2e 100%);
+		background-image: linear-gradient(180deg, #0f0f1a 0%, #1a1a2e 100%);
 
 		@container style(--mobile: true) {
 			padding-block: 0;
